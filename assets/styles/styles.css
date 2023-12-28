@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&display=swap");
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: #faf9f9;
+  color: #f9f9f9;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+header img,
+footer img {
+  width: 120px;
+}
+
+header,
+footer {
+  padding: 1rem;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 121, 179, 0.49) 0%,
+    rgba(9, 90, 200, 0.57) 100%
+  );
+}
+
+.header_content img,
+.footer_content img {
+  transition: transform 0.2s ease-in-out;
+}
+
+.header_content img:hover,
+.footer_content img:hover {
+  transform: scale(1.08);
+}
+
+.header_content,
+.footer_content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.nav li a {
+  line-height: 1;
+  font-weight: 500;
+  z-index: 1;
+  font-size: 20px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #8379b3, #8379b3 50%, #fff 50%);
+  background-size: 200% 100%;
+  background-position: -100%;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.nav li a::before {
+  display: block;
+  content: "";
+  width: 0;
+  height: 2px;
+  bottom: 5px;
+  left: 0;
+  bottom: -3px;
+  z-index: 0;
+  position: absolute;
+  background: #8379b3;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav li a:hover {
+  background-position: 0%;
+}
+
+.nav li:hover a::before {
+  width: 100%;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.nav {
+}
+
+@media only screen and (max-width: 768px) {
+  main img {
+    max-width: 80vw;
+  }
+
+  header img,
+  footer img {
+    width: 80px;
+  }
+
+  .header_content ul,
+  .footer_content ul {
+    gap: 0.5rem;
+    font-size: 1rem;
+  }
+}
